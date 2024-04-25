@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 216 100% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --tertiary: 330 81% 60%;
+    --tertiary-foreground: 330 81% 60%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+::selection{
+  background-color: rgb(236, 70, 153);
+  color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5a67d8;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  width: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif !important;
+  scrollbar-color: #5a67d8 #fff;
+  scrollbar-width: 2px !important;
+}
+
+body {
+  font-family: "Inter", sans-serif !important;
+  /* user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none; */
+  /* font-family: var(--font-dmsans) !important; */
+}
+
+.c {
+  color: #005ce6;
+  color: hsl(330, 81%, 60%);
+}
+
+.filter-grey {
+  filter: brightness(0) saturate(100%) invert(47%) sepia(0%) saturate(217%)
+    hue-rotate(32deg) brightness(98%) contrast(92%);
+}
+
+/* ---- TAILWIND STYLES---- */
+@layer utilities {
+  .wrapper {
+    @apply w-full p-5 max-w-7xl lg:mx-auto md:px-10 xl:px-0;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+}
+
+.pro:hover {
+  /* add here hover class to change the text color continously total 4 colors */
+  animation: changeColor 2s infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    @apply text-blue-500;
+  }
+  25% {
+    @apply text-green-500;
+  }
+  50% {
+    @apply text-yellow-500;
+  }
+  75% {
+    @apply text-red-500;
+  }
+  100% {
+    @apply text-blue-500;
+  }
+}
+
+.shadow-feature {
+  box-shadow: 0 0 40px 10px rgba(212, 212, 212, 0.2);
+}
+
+.animate-rotate {
+  animation: rotate 30s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* @apply to-neutral-400 */
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #a3a3a3;
+  border-bottom-color: #005ce6;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 0.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gradient::before {
+  content: "";
+  transition: all 300ms ease-out;
+  background-image: linear-gradient(to bottom, #fff);
+  border-radius: 8px;
+  position: absolute;
+  inset: 0;
+  /* box-shadow: inset 0 4px 10px #fff; */
+}
