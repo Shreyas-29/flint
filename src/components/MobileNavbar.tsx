@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/Sheet";
 import { tools } from "@/constants";
 import { usePricingModal } from "@/store";
-import { useUser } from "@clerk/nextjs";
+import { useUser, SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from 'react';
@@ -53,14 +53,14 @@ const MobileNavbar = () => {
                             </div>
                             <li className="w-full text-base font-medium">
                                 <Button variant="ghost" className="w-full">
-                                    <Link href="/" className="w-full text-base text-start">
+                                    <Link href="/about" className="w-full text-base text-start">
                                         About
                                     </Link>
                                 </Button>
                             </li>
                             <li className="w-full text-base font-medium">
                                 <Button variant="ghost" className="w-full">
-                                    <Link href="/" className="w-full text-base text-start">
+                                    <Link href="/pricing" className="w-full text-base text-start">
                                         Pricing
                                     </Link>
                                 </Button>
@@ -71,7 +71,7 @@ const MobileNavbar = () => {
                             {tools.map((tool) => (
                                 <li key={tool.id} className="w-full text-base font-medium">
                                     <Button variant="ghost" className="w-full">
-                                        <Link href="/" className="w-full text-base text-start">
+                                        <Link href="#" className="w-full text-base text-start">
                                             {tool.name}
                                         </Link>
                                     </Button>
@@ -113,14 +113,18 @@ const MobileNavbar = () => {
                                 ) : (
                                     <div className="flex flex-col items-start w-full">
                                         <li className="w-full text-base text-start font-medium">
-                                            <Button variant="ghost" className="w-full text-base justify-start">
-                                                Sign In
-                                            </Button>
+                                            <SignInButton mode="modal">
+                                                <Button variant="ghost" className="w-full text-base justify-start">
+                                                    Sign In
+                                                </Button>
+                                            </SignInButton>
                                         </li>
                                         <li className="w-full text-base font-medium">
-                                            <Button variant="ghost" className="w-full text-base justify-start">
-                                                Sign Up
-                                            </Button>
+                                            <SignUpButton mode="modal">
+                                                <Button variant="ghost" className="w-full text-base justify-start">
+                                                    Sign Up
+                                                </Button>
+                                            </SignUpButton>
                                         </li>
                                         <li className="w-full text-base font-medium">
                                             <Button variant="ghost" className="w-full text-base justify-start pro" onClick={handlePricingModalOpen}>
