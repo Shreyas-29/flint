@@ -104,9 +104,8 @@ const Pricing = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <div className="mt-auto w-full">
+                            <div className="w-full mt-auto">
                                 <Button
-                                    asChild
                                     variant={plan.type === "Pro" ? "default" : "subtle"}
                                     className={cn(
                                         "mt-8 w-full",
@@ -155,7 +154,7 @@ const Pricing = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <div className="mt-auto w-full">
+                            <div className="w-full mt-auto">
                                 <Button
                                     variant={plan.type === "Pro" ? "default" : "subtle"}
                                     className={cn(

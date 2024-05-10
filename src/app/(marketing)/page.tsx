@@ -3,9 +3,9 @@ import { HomeSection } from "@/components";
 
 const HomePage = () => {
     return (
-        <div className="wrapper flex flex-col items-center justify-center w-full">
+        <main className="wrapper flex flex-col items-center justify-center min-h-[calc(100vh-56px)] w-full">
             <HomeSection />
-        </div>
+        </main>
     )
 };
 
